@@ -1,0 +1,8 @@
+{% extends 'forum/base.html' %}
+
+{% block content %}
+    <h1>Hello Kontrakan</h1>
+    <div class="btn btn-outline-primary">ngecek bootstrap</div>
+    <a href="{% url 'account:register' %}" >register</a>
+    <a href="{% url 'forum:index' %}" >refresh</a>
+{% endblock content %}
