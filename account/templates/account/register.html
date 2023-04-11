@@ -1,6 +1,10 @@
 {% extends 'forum/base.html' %}
 
 {% block content %}
-    <h1>Register Kontrakan</h1>
-    <a href="{% url 'forum:index' %}" >forum</a>
+    <h1>Register</h1>
+    <form action="{% url 'account:register' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>register</button>
+    </form>
 {% endblock content %}

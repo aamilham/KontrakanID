@@ -16,6 +16,26 @@
     <title>Kontrakan ID</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'account:logout' %}">logout</a></li>
+            {% else %}
+                <li><a href="{% url 'account:login' %}">login</a></li>
+                <li><a href="{% url 'account:register' %}">register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <!-- one time notification -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}} mb-2">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
     {% block content %}
     {% endblock content %}
 </body>

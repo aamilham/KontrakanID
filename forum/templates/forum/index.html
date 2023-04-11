@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Hello Kontrakan</h1>
-    <div class="btn btn-outline-primary">ngecek bootstrap</div>
-    <a href="{% url 'account:register' %}" >register</a>
-    <a href="{% url 'forum:index' %}" >refresh</a>
+    {% if request.user.is_authenticated %}
+        <h3>login as {{ request.user.username }}</h3>
+    {% endif %}
 {% endblock content %}
