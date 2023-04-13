@@ -1,8 +1,83 @@
 {% extends 'forum/base.html' %}
 
 {% block content %}
+
+<div class="homeNavbar">
+    <a href="#" class="logo">
+      <img src="../../static/forum/assets/kontrakaniddd.png" alt="logokontrakanid">
+      <!-- KontrakanID -->
+    </a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'account:logout' %}" class="masukbuttonposition">
+            <button class="masukButton">Logout</button>
+        </a>
+    {% else %}
+    <a href="{% url 'account:login' %}" class="masukbuttonposition">
+      <button class="masukButton">Masuk</button>
+    </a>
+    {% endif %}
+  </div>
+  
+  
+  <div class="hero">
+      <div class="hero-container">
+          <div class="hero-text">
+              <h1>
+                  Bingung cari kontrakan ?<br />
+                  Atau bingung cari teman satu atap ?
+              </h1>
+                  
+      
+              <h2>
+                  Cari ajah di Kontrakan ID dan dapatkan informasi seputar kontrakan yang kamu
+                  inginkan!
+              </h2>
+      
+              <div class="descPembuka">
+                  <div class="descPembuka1">
+                      <img src="../../static/forum/assets/home1.png" alt="image1">
+                      <br>
+                      Dapatkan fasilitas terbaik dari setiap penjual
+                  </div>
+          
+                  <div class="descPembuka2">
+                      <img src="../../static/forum/assets/home2.png" alt="image2">
+                      <br>
+                      Dapatkan teman satu atap yang se-frekuensi dengan mu!
+                  </div>
+              </div>  
+          </div>
+      
+          <div class="testimoni">
+              <div class="testiBox">
+                  <div class="testi1">
+                      <h1>1000++</h1>
+                      <h2>PENGGUNA <br />PUAS</h2>
+                  </div>
+                  <div class="testi2">
+                      <h1>500++</h1>
+                      <h2 class="testi22">KONTRAKAN BERKUALITAS</h2>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+    
+      <div class="hero-joinButton">
+          <a href="{% url 'account:register' %}">
+              <button type="button" class="joinButton">Join Sekarang</button>
+          </a>
+      </div>
+      
+  
+  </div>
+  
+
+<div class="prafront">
     <h1>Hello Kontrakan</h1>
     {% if request.user.is_authenticated %}
         <h3>login as {{ request.user.username }}</h3>
     {% endif %}
+</div>
+
 {% endblock content %}
