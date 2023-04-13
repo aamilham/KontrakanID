@@ -1,11 +1,37 @@
 {% extends 'forum/base.html' %}
 
 {% block content %}
+<div class="loginbackground">
+<div class="loginhero">
+    <div class="loginbox">
+        <div class="loginbox-position">
+        <img src="../../static/forum/assets/loginlogo.png" alt="KontrakanID">
+        <div class="loginform">
+            <form action="{% url 'account:login' %}" method="post" >
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Login</button>
+            </form>
+            <h2>Belum punya akun? <a href="{% url 'account:register' %}">daftar disini</a></h2>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- <div class="loginpra">
     <h1>Login</h1>
     <form action="{% url 'account:login' %}" method="post" >
         {% csrf_token %}
         {{ form.as_p }}
         <button>Login</button>
     </form>
+</div> -->
+
 {% endblock content %}
 
