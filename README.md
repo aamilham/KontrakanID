@@ -1,7 +1,7 @@
 # Path
-/ = home
-/account/login = home
-/account/register = register
+/ = home <br />
+/account/login = home <br />
+/account/register = register <br />
 
 # KontrakanID (Backend)
 11 April 2023 nambah fitur autentikasi
