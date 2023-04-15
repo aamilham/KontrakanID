@@ -28,3 +28,4 @@ in KontrakanID folder do "python manage.py runserver"
 next to do : <br />
 login pages <br />
 register pages <br />
+forum pages <br />
