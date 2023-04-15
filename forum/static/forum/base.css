@@ -210,8 +210,10 @@
     padding: 70px 70px;
 }
 
-.loginform {
-
+.loginlogo {
+    display: block;
+    width: 327px;
+    margin: auto;
 }
 
 .loginform button {

@@ -64,20 +64,24 @@
       </div>
     
       <div class="hero-joinButton">
+        {% if request.user.is_authenticated %}
+        <button type="button" class="joinButton">Halo, {{ request.user.username }}</button>
+        {% else %}
           <a href="{% url 'account:register' %}">
               <button type="button" class="joinButton">Join Sekarang</button>
           </a>
+        {% endif %}
       </div>
       
   
   </div>
   
 
-<div class="prafront">
+<!-- <div class="prafront">
     <h1>Hello Kontrakan</h1>
     {% if request.user.is_authenticated %}
         <h3>login as {{ request.user.username }}</h3>
     {% endif %}
-</div>
+</div> -->
 
 {% endblock content %}

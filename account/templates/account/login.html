@@ -5,7 +5,7 @@
 <div class="loginhero">
     <div class="loginbox">
         <div class="loginbox-position">
-        <img src="../../static/forum/assets/loginlogo.png" alt="KontrakanID">
+        <img src="../../static/forum/assets/loginlogo.png" alt="KontrakanID" class="loginlogo">
         <div class="loginform">
             <form action="{% url 'account:login' %}" method="post" >
                 {% csrf_token %}
@@ -24,7 +24,7 @@
 
 
 
-<!-- <div class="loginpra">
+<!-- <div class="pralogin">
     <h1>Login</h1>
     <form action="{% url 'account:login' %}" method="post" >
         {% csrf_token %}
