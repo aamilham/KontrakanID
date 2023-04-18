@@ -23,9 +23,9 @@ in KontrakanID folder do "python manage.py runserver"
 11 April 2023 nambah fitur autentikasi
 
 # KontrakanID (FrontEnd)
-10 April 2023 Tampilan Home sebelum login
+10 April 2023 Tampilan Home sebelum login <br />
+13 April 2023 Tampilan Login <br />
+15 April 2023 Tampilah Register <br />
 
 next to do : <br />
-login pages <br />
-register pages <br />
 forum pages <br />
