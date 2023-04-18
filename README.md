@@ -16,7 +16,7 @@ in KontrakanID folder do "python manage.py runserver"
 
 # Path
 / = home <br />
-/account/login = home <br />
+/account/login = login <br />
 /account/register = register <br />
 
 # KontrakanID (Backend)
