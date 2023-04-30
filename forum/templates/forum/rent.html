@@ -1,0 +1,19 @@
+{% extends 'forum/base.html' %}
+
+{% block content %}
+    <h2>{{ rent.title }}</h2>
+    <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image">
+    <p>{{ rent.price }}</p>
+    <p>{{ rent.description }}</p>
+
+    
+    <h3>comment section</h3>
+    <ul>
+        {% for comment in comments %}
+            <li><strong>{{ comment.author }}</strong>: {{ comment.content }}</li>
+        {% empty %}
+            <li>no comment yet</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
