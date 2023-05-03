@@ -1,4 +1,6 @@
 {% extends 'forum/base.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block content %}
 <div class="loginbackground">
@@ -9,7 +11,7 @@
         <div class="loginform">
             <form action="{% url 'account:login' %}" method="post" >
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form|crispy }}
                 <button>Login</button>
             </form>
             <h2>Belum punya akun? <a href="{% url 'account:register' %}">daftar disini</a></h2>

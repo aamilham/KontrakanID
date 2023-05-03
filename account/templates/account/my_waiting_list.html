@@ -1,0 +1,23 @@
+{% extends 'forum/base.html' %}
+
+
+{% block content %}
+<h2>anda terdaftar di</h2>
+<ul>
+    {% for rent in waiting_list %}
+        {% if rent.is_closed %}
+            <li class="bg-success">
+                <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
+                <p>{{ rent.description }}</p>
+            </li>
+        {% else %}
+            <li>
+                <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
+                <p>{{ rent.description }}</p>
+            </li>
+        {% endif %}
+    {% empty %}
+        <li>belum terdaftar di kosan manapun</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

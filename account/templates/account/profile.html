@@ -1,0 +1,14 @@
+{% extends 'forum/base.html' %}
+
+
+{% block content %}
+    <h2>Profile</h2>
+    <p>nama: {{ user.username }}</p>
+    <p>password: {{ user.password }}</p>
+    <ul>
+        <li><a href="{% url 'account:waiting_list' pk=user.id %}">waiting list</a></li>
+        <li><a href="{% url 'account:rent_list' pk=user.id %}">kontrakan ku</a></li>
+        <li><a href="{% url 'account:comment_list' pk=user.id %}">komentar ku</a></li>
+    </ul>
+    
+{% endblock content %}

@@ -1,15 +1,21 @@
 {% extends 'forum/base.html' %}
 
 {% block content %}
+    <h2>Daftar kontrakan</h2>
     <ul>
         {% for rent in rents %}
             <li>
                 <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
                 <p>{{ rent.description }}</p>
             </li>
-            
         {% empty %}
             <li>no rent available</li>
         {% endfor %}
     </ul>
+    {% if user.is_authenticated %}
+        <ul>
+            <li><a href="{% url 'forum:create_rent' %}">Posting kontrakan baru</a></li>
+            <li><a href="{% url 'account:profile'  pk=request.user.id %}">Profile</a></li>
+        </ul>
+    {% endif %}
 {% endblock content %}

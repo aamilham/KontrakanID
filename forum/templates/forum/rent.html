@@ -2,18 +2,50 @@
 
 {% block content %}
     <h2>{{ rent.title }}</h2>
-    <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image">
-    <p>{{ rent.price }}</p>
-    <p>{{ rent.description }}</p>
+    <h3>owner: {{ rent.owner }}</h3>
+    <h3>Sisa: {{ remainder }}</h3>
+    <h3>daftar orang</h3>
+    <ul>
+        {% for occupant in occupants %}
+            <li>{{ occupant.username }}</li>
+        {% empty %}
+            <li>belum ada orang</li>
+        {% endfor %}
+    </ul>
 
+
+    <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image">
+    <p>harga: {{ rent.price }}</p>
+    <p>deskripsi: {{ rent.description }}</p>
+
+    {% if request.user.id == rent.owner.id %}
+        <a href="{% url 'forum:update_rent' pk=rent.pk %}">Edit postingan</a>
+    {% endif %}
+
+    {% if request.user.is_authenticated %}
+        <p><a href="{% url 'forum:create_comment' pk=rent.pk %}">Posting komentar baru</a></p>
+        {% if user_already_in %}
+            <p><a href="{% url 'forum:undo_rent' pk=rent.pk %}">cabut dari kontrakan</a></p>    
+        {% else %}
+            <p><a href="{% url 'forum:join_rent' pk=rent.pk %}">join kontrakan</a></p>
+        {% endif %}
+    {% endif %}
     
     <h3>comment section</h3>
     <ul>
         {% for comment in comments %}
-            <li><strong>{{ comment.author }}</strong>: {{ comment.content }}</li>
+            <li>
+                <strong>{{ comment.author }}</strong>: {{ comment.content }}
+                {% if request.user.is_authenticated and request.user.id == comment.author.id %}
+                    <a href="{% url 'forum:update_comment' pk=comment.pk %}">edit komentar</a>
+                {% endif %}
+            </li>
         {% empty %}
             <li>no comment yet</li>
         {% endfor %}
     </ul>
+
+
+
 
 {% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'forum/base.html' %}
+
+
+{% block content %}
+<h2>list Komentar ku</h2>
+<ul>
+    {% for comment in comments %}
+        {% with rent=comment.rent %}
+            <li>
+                <h2>Judul <a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
+                <p>komentar: {{ comment.content }}</p>
+                <p><a href="{% url 'forum:update_comment' pk=comment.pk %}">edit</a></p>
+            </li>
+        {% endwith %}
+    {% empty %}
+        <li>you dont have any rent</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

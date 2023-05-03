@@ -1,0 +1,17 @@
+{% extends 'forum/base.html' %}
+
+
+{% block content %}
+<h2>list kontrakan ku</h2>
+<ul>
+    {% for rent in rents %}
+        <li>
+            <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
+            <p>{{ rent.description }}</p>
+            <p><a href="{% url 'forum:update_rent' pk=rent.pk %}">Edit</a></p>
+        </li>
+    {% empty %}
+        <li>you dont have any rent</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
