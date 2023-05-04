@@ -65,7 +65,9 @@
     
       <div class="hero-joinButton">
         {% if request.user.is_authenticated %}
-        <button type="button" class="joinButton">Halo, {{ request.user.username }}</button>
+        <a href="{% url 'forum:forum' %}">
+            <button type="button" class="joinButton">Halo {{ request.user.username }}, Buka Forum</button>
+        </a>
         {% else %}
           <a href="{% url 'account:register' %}">
               <button type="button" class="joinButton">Join Sekarang</button>
