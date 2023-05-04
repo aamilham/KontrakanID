@@ -1,21 +1,62 @@
 {% extends 'forum/base.html' %}
 
 {% block content %}
-    <h2>Daftar kontrakan</h2>
-    <ul>
-        {% for rent in rents %}
-            <li>
-                <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
-                <p>{{ rent.description }}</p>
-            </li>
-        {% empty %}
-            <li>no rent available</li>
-        {% endfor %}
-    </ul>
-    {% if user.is_authenticated %}
+
+<div class="forumNavbar">
+    <a href="#" class="logo">
+        <img src="../../static/forum/assets/kontrakaniddd.png" alt="logokontrakanid">
+    </a> 
+    <div class="forumProfile">
+        <div class="lonceng">lonceng</div>
+        <h1>orang</h1>
+    </div>
+</div>
+
+<div class="forumHerocontainer">
+
+    <div class="forumHerojudul">
+        <h2>Daftar kontrakan</h2>
+    </div>
+
+    <div class="forumHerokontenposisi">
+            <!-- <ul> -->
+                <div class="forumHerokonten">
+                {% for rent in rents %}
+                    <li>
+                        <div class="forumHeropostingposisi">
+                            <div class="forumHeroposting">
+                                <div class="forumHeropostingOwner">
+                                    <h1>owner : {{ rent.owner }}</h1>
+                                    <div class="forumHeropostingOwnerkanan">
+                                        <h4>harga: {{ rent.price }}</h4>
+                                        <h4>Sisa: {{ remainder }}</h4>
+                                    </div>
+                                </div>
+                                <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
+                                <p>{{ rent.description }}</p>
+                                <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image">
+                                <div class="forumHeropostingkomentar"><a href="{% url 'forum:rent' pk=rent.pk %}">Posting Komentar</a></div>
+                            </div>
+                        </div>
+                    </li>
+                {% empty %}
+                    <li>no rent available</li>
+                {% endfor %}
+            </div>
+            <!-- </ul> -->
+    </div>
+
+    <div class="forumHerobaru">
+        {% if user.is_authenticated %}
         <ul>
             <li><a href="{% url 'forum:create_rent' %}">Posting kontrakan baru</a></li>
             <li><a href="{% url 'account:profile'  pk=request.user.id %}">Profile</a></li>
         </ul>
     {% endif %}
+    </div>
+
+</div>
+    
+    
+    
 {% endblock content %}
