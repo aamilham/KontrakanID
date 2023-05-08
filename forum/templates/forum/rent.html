@@ -1,22 +1,48 @@
 {% extends 'forum/base.html' %}
 
 {% block content %}
-    <h2>{{ rent.title }}</h2>
-    <h3>owner: {{ rent.owner }}</h3>
-    <h3>Sisa: {{ remainder }}</h3>
-    <h3>daftar orang</h3>
-    <ul>
-        {% for occupant in occupants %}
-            <li>{{ occupant.username }}</li>
-        {% empty %}
-            <li>belum ada orang</li>
-        {% endfor %}
-    </ul>
+
+    <div class="rentContainer">
+        <div class="rentBox">
+
+            <div class="rentTop">
+                <div class="rentTitle">
+                    <h3>owner : {{ rent.owner }}</h3>
+                    <h2>- {{ rent.title }}</h2>
+                </div>
+                <div class="rentInfo">
+                    <h2>harga: {{ rent.price }}</h2>
+                    <h3>Sisa: {{ remainder }}</h3>
+                </div>
+            </div>
+            
+            <div class="rentMid">
+                <div class="rentDesc">
+                    <h2>{{ rent.description }}</h2>
+                    <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image">
+                    <h3>Lokasi : {{ rent.address }}</h3>
+                </div>
+            </div>
+
+            <h3>daftar orang</h3>
+                    <ul>
+                        {% for occupant in occupants %}
+                            <li>{{ occupant.username }}</li>
+                        {% empty %}
+                            <li>belum ada orang</li>
+                        {% endfor %}
+                    </ul>
+        </div>
+
+    </div>
+
+    
+    
 
 
-    <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image">
-    <p>harga: {{ rent.price }}</p>
-    <p>deskripsi: {{ rent.description }}</p>
+    
+
+    
 
     {% if request.user.id == rent.owner.id %}
         <a href="{% url 'forum:update_rent' pk=rent.pk %}">Edit postingan</a>

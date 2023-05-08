@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
 
-    width: 1280px;
+    width: 1263px;
     height: 115px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -77,6 +77,19 @@
     line-height: 24px;
 
     color: #292826;
+    margin-top: 15px;
+}
+
+.forumHeropostingOwnerkanan {
+    width: 180px;
+    height: 51px;
+
+    background: #F9D342;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+
+padding-top: 2.3%;
+padding-left: 2%;
 }
 
 .forumHeropostingOwnerkanan h4 {
@@ -85,7 +98,6 @@ font-style: normal;
 font-weight: 800;
 font-size: 16px;
 line-height: 20px;
-
 color: #292826;
 }
 
@@ -95,7 +107,7 @@ color: #292826;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 24px;
     
 }
@@ -111,6 +123,8 @@ color: #292826;
 
 .forumHeroposting p {
     padding-top: 1%;
+
+    width: 640px;
 
     font-family: 'Montserrat';
     font-style: normal;
