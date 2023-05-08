@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<div class="rentBackground">
     <div class="rentContainer">
         <div class="rentBox">
 
@@ -25,38 +26,46 @@
             </div>
 
             <h3>daftar orang</h3>
-                    <ul>
-                        {% for occupant in occupants %}
-                            <li>{{ occupant.username }}</li>
-                        {% empty %}
-                            <li>belum ada orang</li>
-                        {% endfor %}
-                    </ul>
+                <ul>
+                    {% for occupant in occupants %}
+                        <li>{{ occupant.username }}</li>
+                    {% empty %}
+                        <li>belum ada orang</li>
+                    {% endfor %}
+                </ul>
+
+            <div class="rentBot">
+                {% if request.user.is_authenticated %}
+                <p><a href="{% url 'forum:create_comment' pk=rent.pk %}">
+                    <i class="uil uil-comment-add"></i>
+                    Posting komentar baru
+                </a></p>
+                {% if user_already_in %}
+                    <p><a href="{% url 'forum:undo_rent' pk=rent.pk %}">
+                        <i class="uil uil-user-minus"></i>
+                        Cabut dari kontrakan
+                    </a></p>    
+                {% else %}
+                    <p><a href="{% url 'forum:join_rent' pk=rent.pk %}">
+                        <i class="uil uil-user-plus"></i>
+                        Join kontrakan
+                    </a></p>
+                {% endif %}
+                {% endif %}
+
+                {% if request.user.id == rent.owner.id %}
+                    <p><a href="{% url 'forum:update_rent' pk=rent.pk %}">
+                        <i class="uil uil-edit-alt"></i>
+                        Edit postingan
+                    </a></p>
+                {% endif %}
+            </div>
+            
         </div>
 
     </div>
-
-    
-    
-
-
-    
-
-    
-
-    {% if request.user.id == rent.owner.id %}
-        <a href="{% url 'forum:update_rent' pk=rent.pk %}">Edit postingan</a>
-    {% endif %}
-
-    {% if request.user.is_authenticated %}
-        <p><a href="{% url 'forum:create_comment' pk=rent.pk %}">Posting komentar baru</a></p>
-        {% if user_already_in %}
-            <p><a href="{% url 'forum:undo_rent' pk=rent.pk %}">cabut dari kontrakan</a></p>    
-        {% else %}
-            <p><a href="{% url 'forum:join_rent' pk=rent.pk %}">join kontrakan</a></p>
-        {% endif %}
-    {% endif %}
-    
+</div>
+        
     <h3>comment section</h3>
     <ul>
         {% for comment in comments %}

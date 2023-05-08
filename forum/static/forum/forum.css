@@ -16,6 +16,20 @@
     padding-right: 2%;
 }
 
+.forumProfile .lonceng {
+    height: 45px;
+  width: 45px;
+  background-color: #F9D342;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.loncenglogo {
+    font-size: 26px;
+    width: 26px;
+    margin: auto;
+}
+
 .forumHerocontainer {
     padding-top: 2.5%;
     display: block;
@@ -30,11 +44,34 @@
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
+    
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .forumHerojudul h2 {
-    width: 250px;
+    width: 270px;
     margin: auto;
+}
+
+.forumHerojudulbawah {
+    display: flex;
+    margin-top: 40px;
+
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 29px;
+
+justify-content: space-between;
+
+}
+
+.forumHerojudulbawah a {
+    color: #d8b527;
+    text-decoration: none;
 }
 
 .forumHerokontenposisi {

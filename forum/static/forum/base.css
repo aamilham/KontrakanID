@@ -2,6 +2,13 @@
     overflow: hidden;
 } */
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #F5F5F5;
+}
+
 .homeNavbar {
     position: fixed;
     right: 0;
@@ -43,6 +50,7 @@
 .hero {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
     min-height: 89vh;
     margin-top: 92.05px;
     background: #F5F5F5;
@@ -180,6 +188,8 @@
     font-weight: 800;
     font-size: 20px;
     line-height: 24px;
+
+    margin-bottom: 20px;
 }
 
 .loginbackground {
