@@ -10,7 +10,9 @@
         <div class="lonceng">
             <div class="loncenglogo"><i class="uil uil-bell"></i></div>
         </div>
-        <h1>{{ request.user.username }}</h1>
+        <a href="{% url 'account:profile'  pk=request.user.id %}">
+            <h1>{{ request.user.username }}</h1>
+        </a>
     </div>
 </div>
 
@@ -42,10 +44,11 @@
                                 <h2><a href="{% url 'forum:rent' pk=rent.pk %}">- {{ rent.title }}</a></h2>
                                 <p>{{ rent.description }}</p>
                                 <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image">
+                                <h3>Lokasi : {{ rent.address }}</h3>
                                 <div class="forumHeropostingkomentar">
                                     <a href="{% url 'forum:rent' pk=rent.pk %}">
                                         <i class="uil uil-comment-add"></i>
-                                        Posting Komentar
+                                        <h2>Posting Komentar</h2>
                                     </a>
                                 </div>
                             </div>
