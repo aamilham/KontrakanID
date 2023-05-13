@@ -19,6 +19,7 @@ in KontrakanID folder do "python manage.py runserver"
 /account/login = login <br />
 /account/register = register <br />
 /account/forum = forum <br />
+other -> click on forum pages :D
 
 # KontrakanID (Backend)
 11 April 2023 nambah fitur autentikasi
@@ -28,5 +29,10 @@ in KontrakanID folder do "python manage.py runserver"
 13 April 2023 Tampilan Login <br />
 15 April 2023 Tampilah Register <br />
 
+
 next to do : <br />
-forum pages <br />
+forum pages - clear<br />
+rent pages - clear<br />
+create post - clear<br />
+profile
+comment section
