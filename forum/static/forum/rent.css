@@ -32,6 +32,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     padding: 3%;
+    margin-bottom: 20px;
 }
 
 .rentTop {
@@ -194,4 +195,44 @@ margin-top: 4%;
 margin-left: 2%;
 
 
+}
+
+.rentComment {
+    width: 807px;
+    margin: auto;
+    background-color: #FFFFFF;
+    padding: 3%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.rentComment h3 {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 18px;
+margin-bottom: 20px;
+
+width: 235px;
+margin: auto;
+}
+
+.rentComment ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.rentComment li {
+    width: 650px;
+    background-color: #F5F5F5;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.rentComment a {
+    text-decoration: none;
+    font-size: 14px;
 }

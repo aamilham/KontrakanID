@@ -83,13 +83,13 @@
         </div>
 
     </div>
-</div>
-        
-    <h3>comment section</h3>
+
+    <div class="rentComment">
+        <h3>Comment Section</h3>
     <ul>
         {% for comment in comments %}
             <li>
-                <strong>{{ comment.author }}</strong>: {{ comment.content }}
+                <strong>{{ comment.author }}</strong> </br> {{ comment.content }}
                 {% if request.user.is_authenticated and request.user.id == comment.author.id %}
                     <a href="{% url 'forum:update_comment' pk=comment.pk %}">edit komentar</a>
                 {% endif %}
@@ -98,8 +98,9 @@
             <li>no comment yet</li>
         {% endfor %}
     </ul>
+    </div>
 
-
-
+</div>
+    
 
 {% endblock content %}

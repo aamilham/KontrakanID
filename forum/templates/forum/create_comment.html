@@ -3,10 +3,32 @@
 
 
 {% block content %}
+<div class="createRentBackground">
+<div class="forumNavbar">
+    <a href="{% url 'forum:forum' %}" class="logo">
+        <div class="backbutton">
+            <div class="backbuttoncontent">
+                <i class="uil uil-arrow-left"></i>
+                Forum
+            </div>
+        </div>
+    </a> 
+<div class="forumProfile">
+    <div class="lonceng">
+        <div class="loncenglogo"><i class="uil uil-bell"></i></div>
+    </div>
+    <h1>{{ request.user.username }}</h1>
+</div>
+</div>
+
+<div class="createRent">
     <h2>Create Comment</h2>
     <form method="post">
         {% csrf_token %}
         {{ form|crispy }}
-        <button type="submit">post</button>
+        <button type="submit">Post Komentar</button>
     </form>
+</div>
+
+</div>
 {% endblock content %}
