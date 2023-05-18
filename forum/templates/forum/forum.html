@@ -22,7 +22,7 @@
         <h2>Apa kabar hari ini?</h2>
                 <div class="forumHerojudulbawah">
                     {% if user.is_authenticated %}
-                    <a href="{% url 'account:profile'  pk=request.user.id %}"><i class="uil uil-user"></i>Profile anda</a>
+                    <a href="{% url 'account:profile'  pk=request.user.id %}"><i class="uil uil-user"></i>Profile Anda</a>
                     <a href="{% url 'forum:create_rent' %}"><i class="uil uil-plus-circle"></i>Posting kontrakan baru</a>
                     {% endif %}
                 </div>
