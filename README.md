@@ -1,6 +1,6 @@
 # KontrakanID
 
-Cari teman beserta kontrakan dengan aman dan mudah!
+Cari teman beserta kontrakan dengan aman dan mudah!!
 
 ## Start Server
 
