@@ -2,13 +2,45 @@
 
 
 {% block content %}
-    <h2>Profile</h2>
-    <p>nama: {{ user.username }}</p>
-    <p>password: {{ user.password }}</p>
-    <ul>
+<div class="forumBackground">
+<div class="forumNavbar">
+    <a href="{% url 'forum:forum' %}" class="logo">
+        <div class="backbutton">
+            <div class="backbuttoncontent">
+                <i class="uil uil-arrow-left"></i>
+                Forum
+            </div>
+        </div>
+    </a> 
+<div class="forumProfile">
+    <div class="lonceng">
+        <div class="loncenglogo"><i class="uil uil-bell"></i></div>
+    </div>
+    <h1>{{ request.user.username }}</h1>
+</div>
+</div>
+
+<div class="profileBox">
+    <div class="profileTop">
+        <h2>Profile</h2>
+        <p>Username: {{ user.username }}</p>
+        <!-- <p>password: {{ user.password }}</p> -->
+    </div>
+    <!-- <ul>
         <li><a href="{% url 'account:waiting_list' pk=user.id %}">waiting list</a></li>
         <li><a href="{% url 'account:rent_list' pk=user.id %}">kontrakan ku</a></li>
         <li><a href="{% url 'account:comment_list' pk=user.id %}">komentar ku</a></li>
-    </ul>
+    </ul> -->
+    <div class="profileMid">
+        <a href="{% url 'account:waiting_list' pk=user.id %}"><i class="uil uil-users-alt"></i><h3>Waiting List</h3></a>
+        <div class="line1"></div>
+        <a href="{% url 'account:rent_list' pk=user.id %}"><i class="uil uil-house-user"></i><h3>Kontrakan Ku</h3></a>
+        <div class="line2"></div>
+        <a href="{% url 'account:comment_list' pk=user.id %}"><i class="uil uil-comment-alt-lines"></i><h3>Komentar Ku</h3></a>
+    </div>
+</div>
+</div>
+
+    
     
 {% endblock content %}

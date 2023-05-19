@@ -1,0 +1,67 @@
+
+.profileBox {
+    width: 807px;
+    height: 520px;
+    margin: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding: 3%;
+}
+
+.profileTop {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 29px;
+    margin-bottom: 20px;
+}
+
+.profileTop h2 {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+line-height: 29px;
+}
+
+.profileMid a {
+    display: flex;
+    text-decoration: none;
+    color: #000000;
+    /* margin-bottom: 20px; */
+}
+
+.profileMid a i {
+    font-size : 35px;
+    color: #F9D342;
+}
+
+.profileMid a h3 {
+    padding: 1.2%;
+    padding-top: 2.5%;
+
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+
+
+}
+
+.line1 {
+width: 250px;
+height: 0px;
+
+border: 1px solid rgba(0, 0, 0, 0.66);
+transform: rotate(-180deg);
+}
+
+.line2 {
+    width: 250px;
+height: 0px;
+
+border: 1px solid rgba(0, 0, 0, 0.66);
+transform: rotate(-180deg);
+}
