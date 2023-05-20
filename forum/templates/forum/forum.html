@@ -22,8 +22,8 @@
         <h2>Apa kabar hari ini?</h2>
                 <div class="forumHerojudulbawah">
                     {% if user.is_authenticated %}
-                    <a href="{% url 'account:profile'  pk=request.user.id %}"><i class="uil uil-user"></i>Profile Anda</a>
-                    <a href="{% url 'forum:create_rent' %}"><i class="uil uil-plus-circle"></i>Posting kontrakan baru</a>
+                    <a href="{% url 'account:profile'  pk=request.user.id %}"><i class="uil uil-user"></i> Profile Anda</a>
+                    <a href="{% url 'forum:create_rent' %}"><i class="uil uil-plus-circle"></i> Posting kontrakan baru</a>
                     {% endif %}
                 </div>
     </div>
@@ -36,20 +36,19 @@
                         <div class="forumHeropostingposisi">
                             <div class="forumHeroposting">
                                 <div class="forumHeropostingOwner">
-                                    <h1>owner : {{ rent.owner }}</h1>
+                                    <div class="forumHeropostingOwnerkiri">
+                                        <i class="uil uil-user-circle"></i> <h1>{{ rent.owner }}</h1>
+                                    </div>
                                     <div class="forumHeropostingOwnerkanan">
                                         <h4>harga: {{ rent.price }}</h4>
                                     </div>
                                 </div>
-                                <h2><a href="{% url 'forum:rent' pk=rent.pk %}">- {{ rent.title }}</a></h2>
+                                <h2><a href="{% url 'forum:rent' pk=rent.pk %}"><i class="uil uil-caret-right"></i> {{ rent.title }}</a></h2>
                                 <p>{{ rent.description }}</p>
                                 <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image">
                                 <h3>Lokasi : {{ rent.address }}</h3>
                                 <div class="forumHeropostingkomentar">
-                                    <a href="{% url 'forum:rent' pk=rent.pk %}">
-                                        <i class="uil uil-comment-add"></i>
-                                        <h2>Posting Komentar</h2>
-                                    </a>
+                                    <a href="{% url 'forum:rent' pk=rent.pk %}"><i class="uil uil-angle-double-right"></i><h2>Lihat selengkapnya</h2></a>
                                 </div>
                             </div>
                         </div>

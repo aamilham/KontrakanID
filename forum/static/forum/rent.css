@@ -40,15 +40,29 @@
     justify-content: space-between;
 }
 
-.rentTitle h3 {
+.rentTitle {
+    margin-top: 10px;
+}
+
+.rentTitleowner {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.rentTitleowner h3 {
     font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
-font-size: 17px;
+font-size: 24px;
 line-height: 24px;
 
 color: #292826;
-margin-bottom: 20px;
+padding-top: 19px;
+padding-left: 5px;
+}
+
+.rentTitleowner i {
+    font-size: 40px;
 }
 
 .rentTitle h2 {
@@ -97,7 +111,7 @@ color: #292826;
 }
 
 .rentMid {
-    margin-top: 8%;
+    margin-top: 3%;
     display: flex;
     height: 230px;
 }
@@ -227,9 +241,9 @@ margin: auto;
     width: 650px;
     background-color: #F5F5F5;
     margin-bottom: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
     border-radius: 10px;
-    padding: 1%;
+    padding: 2%;
 }
 
 .rentComment a {

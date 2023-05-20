@@ -114,8 +114,11 @@ justify-content: space-between;
     padding-right: 10%;
     justify-content: space-between;
 }
+.forumHeropostingOwnerkiri {
+    display: flex;
+}
 
-.forumHeropostingOwner h1 {
+.forumHeropostingOwnerkiri h1 {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -123,7 +126,12 @@ justify-content: space-between;
     line-height: 24px;
 
     color: #292826;
-    margin-top: 15px;
+    padding-top: 23px;
+    padding-left: 5px;
+}
+
+.forumHeropostingOwner i {
+    font-size: 40px;
 }
 
 .forumHeropostingOwnerkanan {
@@ -148,7 +156,7 @@ color: #292826;
 }
 
 .forumHeroposting h2 {
-    padding-top: 3%;
+    padding-top: 1%;
 
     font-family: 'Montserrat';
     font-style: normal;
@@ -159,7 +167,7 @@ color: #292826;
 }
 
 .forumHeroposting h2 :hover {
-    color: #ce9834;
+    color: #bd8b2f;
 }
 
 .forumHeroposting h3 {
@@ -199,7 +207,7 @@ color: #000000;
 }
 
 .forumHeropostingkomentar {
-    padding-top: 1.5%;
+    padding-top: 1.2%;
 
     font-family: 'Montserrat';
 font-style: normal;
@@ -215,7 +223,7 @@ line-height: 18px;
 
 .forumHeropostingkomentar a {
     text-decoration: none;
-    color: #292826;
+    color: #bd8b2f;
     display: flex;
 }
 
@@ -226,7 +234,7 @@ font-weight: 400;
 font-size: 15px;
 line-height: 18px;
 
-margin-top: -2%;
+margin-top: -1px;
 margin-left: 0.5%;
 }
 

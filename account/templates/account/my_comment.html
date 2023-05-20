@@ -2,18 +2,47 @@
 
 
 {% block content %}
-<h2>list Komentar ku</h2>
-<ul>
-    {% for comment in comments %}
-        {% with rent=comment.rent %}
-            <li>
-                <h2>Judul <a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
-                <p>komentar: {{ comment.content }}</p>
-                <p><a href="{% url 'forum:update_comment' pk=comment.pk %}">edit</a></p>
-            </li>
-        {% endwith %}
-    {% empty %}
-        <li>you dont have any rent</li>
-    {% endfor %}
-</ul>
+
+<div class="forumBackground">
+    <div class="forumNavbar">
+        <a href="{% url 'forum:forum' %}" class="logo">
+            <div class="backbutton">
+                <div class="backbuttoncontent">
+                    <i class="uil uil-arrow-left"></i>
+                    Forum
+                </div>
+            </div>
+        </a> 
+    <div class="forumProfile">
+        <div class="lonceng">
+            <div class="loncenglogo"><i class="uil uil-bell"></i></div>
+        </div>
+        <a href="{% url 'account:profile'  pk=request.user.id %}">
+        <h1>{{ request.user.username }}</h1>
+        </a>
+    </div>
+    </div>
+
+
+    <div class="mycommentHero">
+
+        <h2>List Komentar ku</h2>
+
+        <div class="mycommentBox">
+                {% for comment in comments %}
+                    {% with rent=comment.rent %}
+                        <h3><a href="{% url 'forum:rent' pk=rent.pk %}"><i class="uil uil-estate"></i>  {{ rent.title }}</a></h3>
+                        <h4>komentar: {{ comment.content }}</h4>
+                        <p><a href="{% url 'forum:update_comment' pk=comment.pk %}">edit</a></p>
+                    {% endwith %}
+                {% empty %}
+                    <li>you dont have any rent</li>
+                {% endfor %}
+        </div>
+        
+    </div>
+
+</div>
+
+
 {% endblock content %}

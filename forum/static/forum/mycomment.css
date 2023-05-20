@@ -1,0 +1,32 @@
+
+.mycommentHero h2 {
+    width: 250px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.mycommentBox {
+    width: 800px;
+    margin: auto;
+    padding: 3%;
+    border-radius: 3%;
+    background-color: rgb(255, 255, 255);
+}
+
+.mycommentBox h4 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #292826;
+
+    padding: 2%;
+    background-color: #F5F5F5;
+    border-radius: 3%;
+}
+
+.mycommentBox a {
+    text-decoration: none;
+    color: #292826;
+}

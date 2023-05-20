@@ -17,7 +17,9 @@
         <div class="lonceng">
             <div class="loncenglogo"><i class="uil uil-bell"></i></div>
         </div>
+        <a href="{% url 'account:profile'  pk=request.user.id %}">
         <h1>{{ request.user.username }}</h1>
+        </a>
     </div>
 </div>
 
