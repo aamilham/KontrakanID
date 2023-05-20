@@ -12,7 +12,7 @@ in KontrakanID folder do "python manage.py runserver"
 
 - [@luqqmman](https://www.github.com/luqqmman) - Backend
 - [@aamilham](https://www.github.com/aamilham) - Frontend
-- [@andikarizky](https://www.github.com/andikarisky28) - UX/UI Designer
+- [@andikarisky28](https://www.github.com/andikarisky28) - UX/UI Designer
 
 # Path
 / = home <br />
