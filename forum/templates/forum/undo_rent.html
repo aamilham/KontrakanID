@@ -3,11 +3,25 @@
 
 
 {% block content %}
-    <h2>Cabut Kontrakan</h2>
-    <form method="post">
-        {% csrf_token %}    
-        {{ form|crispy }}
-        <button type="submit">Yakin</button>
-    </form>
-    <a href="{% url 'forum:rent' pk=pk %}">kembali</a>
+<div class="forumBackground">
+<div class="tambahanatas"></div>
+
+    <div class="undoBox">
+        <h2>Cabut Kontrakan</h2>
+        <div class="undoForm">
+            <form method="post">
+                {% csrf_token %}    
+                {{ form|crispy }}
+                <button type="submit">Yakin</button>
+            </form>
+        </div>
+        <a href="{% url 'forum:rent' pk=pk %}">
+                <div class="Undobackbuttoncontent">
+                    <i class="uil uil-arrow-left"></i>Kembali
+                </div>
+        </a>
+    </div>
+
+<div class="tambahan"></div>
+</div>
 {% endblock content %}
