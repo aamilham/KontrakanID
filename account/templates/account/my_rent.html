@@ -9,6 +9,7 @@
             <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
             <p>{{ rent.description }}</p>
             <p><a href="{% url 'forum:update_rent' pk=rent.pk %}">Edit</a></p>
+            <p><a href="{% url 'forum:delete_rent' pk=rent.pk %}">Delete</a></p>
         </li>
     {% empty %}
         <li>you dont have any rent</li>

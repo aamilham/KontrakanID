@@ -13,4 +13,7 @@ urlpatterns = [
     path('profile/<int:pk>/waiting/list', views.MyWaitingList.as_view(), name='waiting_list'),
     path('profile/<int:pk>/rent/list', views.MyRent.as_view(), name='rent_list'),
     path('profile/<int:pk>/comment/list', views.MyComment.as_view(), name='comment_list'),
+    path('profile/<int:pk>/create', views.CreateProfile.as_view(), name='create_profile'),
+    path('profile/<int:pk>/update', views.UpdateProfile.as_view(), name='update_profile'),
+
 ]

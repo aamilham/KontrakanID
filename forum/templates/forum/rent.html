@@ -76,12 +76,6 @@
                 {% endif %}
                 {% endif %}
 
-                {% if request.user.id == rent.owner.id %}
-                    <a href="{% url 'forum:update_rent' pk=rent.pk %}">
-                        <i class="uil uil-edit-alt"></i>
-                        <h2>Edit postingan</h2>
-                    </a>
-                {% endif %}
             </div>
             
         </div>
@@ -94,9 +88,6 @@
         {% for comment in comments %}
             <li>
                 <strong>{{ comment.author }}</strong> </br> {{ comment.content }}
-                {% if request.user.is_authenticated and request.user.id == comment.author.id %}
-                    <a href="{% url 'forum:update_comment' pk=comment.pk %}">edit komentar</a>
-                {% endif %}
             </li>
         {% empty %}
             <li>no comment yet</li>

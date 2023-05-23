@@ -26,7 +26,15 @@
     <div class="profileTop">
         <h2>Profile</h2>
         <p>Username: {{ user.username }}</p>
-        <!-- <p>password: {{ user.password }}</p> -->
+        {% if user.profile %}
+            <img src="{{ user.profile.photo.url }}" alt="" width="100px" height="100px">
+            <p>Status: {{ user.profile.status }}</p>
+            <p>Gender: {{ user.profile.gender }}</p>
+            <p>Contact link: <a href="https://{{ user.profile.link }}">{{ user.profile.link }}</a></p>
+            <a href="{% url 'account:update_profile' pk=user.id %}">edit profile</a>
+        {% else %}
+            <a href="{% url 'account:create_profile' pk=user.id %}">lengkapi profile</a>
+        {% endif %}
     </div>
     <!-- <ul>
         <li><a href="{% url 'account:waiting_list' pk=user.id %}">waiting list</a></li>

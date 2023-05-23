@@ -1,0 +1,14 @@
+{% extends 'forum/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<h1>Confirm Delete</h1>
+<p>Apakah Anda yakin ingin menghapus Kontrakan ini?</p>
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" value="Delete">
+  <a href="{% url 'forum:rent' rent.pk %}">Cancel</a>
+</form>
+
+{% endblock content %}

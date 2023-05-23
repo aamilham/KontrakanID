@@ -2,7 +2,7 @@ from typing import Optional
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import View, ListView, DetailView, CreateView, UpdateView
+from django.views.generic import View, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -150,3 +150,29 @@ class UndoRent(View):
                 messages.warning(request, "Gagal mengeluarkan anda dari kontrakan")
             return redirect(reverse_lazy('forum:rent', args=[self.kwargs.get("pk")]))
         return redirect(reverse_lazy('forum:rent', args=[self.kwargs.get("pk")]))
+    
+
+class DeleteRent(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Rent
+    context_object_name = 'rent'
+
+    def test_func(self):
+        rent = self.get_object()
+        return self.request.user.pk == rent.owner.pk
+    
+    def get_success_url(self):
+        return reverse_lazy('account:rent_list', args=[self.request.user.pk])
+    
+
+class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Comment
+    context_object_name = 'comment'
+
+    def test_func(self):
+        comment = self.get_object()
+        return self.request.user.pk == comment.author.pk
+    
+    def get_success_url(self):
+        return reverse_lazy('account:comment_list', args=[self.request.user.pk])
+    
+
