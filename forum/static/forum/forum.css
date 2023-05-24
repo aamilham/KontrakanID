@@ -33,8 +33,30 @@
   border-radius: 50%;
   display: inline-block;
 
-  margin-top: 15px;
+margin-top: 15px;
   margin-right: 20px;
+
+}
+
+.photoProfile {
+    display: inline-block;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+a .photoProfilename {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+height: 45px;
+
+margin-top: 20px;
 }
 
 .loncenglogo {

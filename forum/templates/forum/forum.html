@@ -2,19 +2,23 @@
 
 {% block content %}
 <div class="forumBackground">
-<div class="forumNavbar">
-    <a href="{% url 'forum:index' %}" class="logo">
-        <img src="../../static/forum/assets/kontrakaniddd.png" alt="logokontrakanid">
-    </a> 
-    <div class="forumProfile">
-        <div class="lonceng">
-            <div class="loncenglogo"><i class="uil uil-bell"></i></div>
+        <div class="forumNavbar">
+            <a href="{% url 'forum:index' %}" class="logo">
+                <img src="../../static/forum/assets/kontrakaniddd.png" alt="logokontrakanid">
+            </a> 
+            <div class="forumProfile">
+                <div class="lonceng">
+                    <div class="loncenglogo"><i class="uil uil-bell"></i></div>
+                </div>
+                <a href="{% url 'account:profile'  pk=request.user.id %}">
+                    {% if user.profile %}
+                        <img src="{{ user.profile.photo.url }}" alt="" class="photoProfile">
+                    {% else %}
+                    <h1 class="photoProfilename">{{ request.user.username }}</h1>
+                    {% endif %}
+                </a>
+            </div>
         </div>
-        <a href="{% url 'account:profile'  pk=request.user.id %}">
-            <h1>{{ request.user.username }}</h1>
-        </a>
-    </div>
-</div>
 
 <div class="forumHerocontainer">
 

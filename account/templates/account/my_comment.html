@@ -18,7 +18,11 @@
             <div class="loncenglogo"><i class="uil uil-bell"></i></div>
         </div>
         <a href="{% url 'account:profile'  pk=request.user.id %}">
-        <h1>{{ request.user.username }}</h1>
+            {% if user.profile %}
+            <img src="{{ user.profile.photo.url }}" alt="" class="photoProfile">
+        {% else %}
+        <h1 class="photoProfilename">{{ request.user.username }}</h1>
+        {% endif %}
         </a>
     </div>
     </div>

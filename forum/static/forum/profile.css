@@ -9,17 +9,6 @@
     padding: 3%;
 }
 
-.photoProfile {
-    display: inline-block;
-    width: 76px;
-    height: 76px;
-    border-radius: 50%;
-
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-
 .profileText {
     display: flex;
 }

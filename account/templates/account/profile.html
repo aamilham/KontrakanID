@@ -20,7 +20,7 @@
         {% if user.profile %}
             <img src="{{ user.profile.photo.url }}" alt="" class="photoProfile">
         {% else %}
-            <h1>{{ request.user.username }}</h1>
+        <h1 class="photoProfilename">{{ request.user.username }}</h1>
         {% endif %}
     </a>
 </div>
