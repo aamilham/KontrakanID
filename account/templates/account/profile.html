@@ -17,36 +17,53 @@
         <div class="loncenglogo"><i class="uil uil-bell"></i></div>
     </div>
     <a href="{% url 'account:profile'  pk=request.user.id %}">
-    <h1>{{ request.user.username }}</h1>
+        {% if user.profile %}
+            <img src="{{ user.profile.photo.url }}" alt="" class="photoProfile">
+        {% else %}
+            <h1>{{ request.user.username }}</h1>
+        {% endif %}
     </a>
 </div>
 </div>
 
 <div class="profileBox">
-    <div class="profileTop">
-        <h2>Profile</h2>
-        <p>Username: {{ user.username }}</p>
-        {% if user.profile %}
-            <img src="{{ user.profile.photo.url }}" alt="" width="100px" height="100px">
-            <p>Status: {{ user.profile.status }}</p>
-            <p>Gender: {{ user.profile.gender }}</p>
-            <p>Contact link: <a href="https://{{ user.profile.link }}">{{ user.profile.link }}</a></p>
-            <a href="{% url 'account:update_profile' pk=user.id %}">edit profile</a>
-        {% else %}
-            <a href="{% url 'account:create_profile' pk=user.id %}">lengkapi profile</a>
-        {% endif %}
-    </div>
-    <!-- <ul>
-        <li><a href="{% url 'account:waiting_list' pk=user.id %}">waiting list</a></li>
-        <li><a href="{% url 'account:rent_list' pk=user.id %}">kontrakan ku</a></li>
-        <li><a href="{% url 'account:comment_list' pk=user.id %}">komentar ku</a></li>
-    </ul> -->
-    <div class="profileMid">
-        <a href="{% url 'account:waiting_list' pk=user.id %}"><i class="uil uil-users-alt"></i><h3>Waiting List</h3></a>
-        <div class="line1"></div>
-        <a href="{% url 'account:rent_list' pk=user.id %}"><i class="uil uil-house-user"></i><h3>Kontrakan Ku</h3></a>
-        <div class="line2"></div>
-        <a href="{% url 'account:comment_list' pk=user.id %}"><i class="uil uil-comment-alt-lines"></i><h3>Komentar Ku</h3></a>
+    <div class="profileText">
+        <div class="profileOut">
+            <div class="profileTop">
+                <h2>Profile</h2>
+                {% if user.profile %}
+                <img src="{{ user.profile.photo.url }}" alt="" class="photoProfile">
+                {% endif %}
+                <p>Username: {{ user.username }}</p>
+            </div>
+            <!-- <ul>
+                <li><a href="{% url 'account:waiting_list' pk=user.id %}">waiting list</a></li>
+                <li><a href="{% url 'account:rent_list' pk=user.id %}">kontrakan ku</a></li>
+                <li><a href="{% url 'account:comment_list' pk=user.id %}">komentar ku</a></li>
+            </ul> -->
+            <div class="profileMid">
+                <a href="{% url 'account:waiting_list' pk=user.id %}"><i class="uil uil-users-alt"></i><h3>Waiting List</h3></a>
+                <div class="line1"></div>
+                <a href="{% url 'account:rent_list' pk=user.id %}"><i class="uil uil-house-user"></i><h3>Kontrakan Ku</h3></a>
+                <div class="line2"></div>
+                <a href="{% url 'account:comment_list' pk=user.id %}"><i class="uil uil-comment-alt-lines"></i><h3>Komentar Ku</h3></a>
+            </div>      
+        </div>
+        <div class="profileBatas"></div>
+        <div class="profileWith">
+            {% if user.profile %}
+                    <h2>Status: <h3>{{ user.profile.status }}</h3></h2>
+                    <h2>Gender: <h3>{{ user.profile.gender }}</h3></h2>
+                    <h2>Contact link: <h3><a href="https://{{ user.profile.link }}">{{ user.profile.link }}</a></h3></h2>
+                    <div class="profileEdit">
+                        <a href="{% url 'account:update_profile' pk=user.id %}"><h4>edit profile</h4></a>
+                    </div>
+                {% else %}
+                <div class="profileEdit">
+                    <a href="{% url 'account:create_profile' pk=user.id %}"><h4>lengkapi profile</h4></a>
+                </div>
+                {% endif %}
+        </div>
     </div>
 </div>
 <div class="tambahan"></div>

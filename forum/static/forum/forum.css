@@ -32,6 +32,9 @@
   background-color: #F9D342;
   border-radius: 50%;
   display: inline-block;
+
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 .loncenglogo {

@@ -9,6 +9,81 @@
     padding: 3%;
 }
 
+.photoProfile {
+    display: inline-block;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.profileText {
+    display: flex;
+}
+
+.profileBatas {
+    height: 350px;
+    width: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.66);
+    margin-left: 60px;
+}
+
+.profileWith {
+    padding-top: 4%;
+    padding-left: 5%;
+}
+
+.profileWith h2 {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 25px;
+line-height: 29px;
+}
+
+.profileWith h3 {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 29px;
+
+padding-left: 1%;
+
+background-color: #f5f5f5;
+border-radius: 5%;
+
+margin-bottom: 20px;
+}
+
+
+.profileWith a {
+    text-decoration: none;
+}
+
+.profileEdit a {
+    position: absolute;
+}
+
+.profileEdit a h4{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 24px;
+
+width: 150px;
+    color: #000000;
+    background-color: #F9D342;
+    padding: 3%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
 .profileTop {
     font-family: 'Montserrat';
     font-style: normal;
@@ -39,15 +114,13 @@ line-height: 29px;
 
 .profileMid a h3 {
     padding: 1.2%;
-    padding-top: 2.5%;
+    padding-top: 6%;
 
     font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
 font-size: 20px;
 line-height: 24px;
-
-
 }
 
 .line1 {
