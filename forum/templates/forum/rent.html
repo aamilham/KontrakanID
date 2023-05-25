@@ -33,7 +33,7 @@
                     <div class="rentTitle">
                         <div class="rentTitleowner">
                             {% if user.profile %}
-                                <img src="{{ user.profile.photo.url }}" alt="" class="photoProfilerent">
+                                <img src="{{ rent.owner.profile.photo.url }}" alt="" class="photoProfilerent">
                             {% else %}
                                 <i class="uil uil-user-circle"></i>
                             {% endif %}
