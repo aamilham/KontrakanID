@@ -3,12 +3,22 @@
 
 
 {% block content %}
-<h1>Confirm Delete</h1>
-<p>Apakah Anda yakin ingin menghapus Kontrakan ini?</p>
-<form method="post">
-  {% csrf_token %}
-  <input type="submit" value="Delete">
-  <a href="{% url 'forum:rent' rent.pk %}">Cancel</a>
-</form>
+<div class="forumBackground">
+  <div class="tambahanatas"></div>
+
+  <div class="deleteBox">
+  <h2>Confirm Delete</h2>
+  <h5>Apakah Anda yakin ingin menghapus Kontrakan ini?</h5>
+  <form method="post">
+    {% csrf_token %}
+    <div class="deleteBoxbottom">
+    <input type="submit" value="Delete" class="deleteButton">
+    <a href="{% url 'forum:rent' rent.pk %}">Cancel</a>
+  </div>
+  </form>
+</div>
+
+<div class="tambahan"></div>
+</div>
 
 {% endblock content %}

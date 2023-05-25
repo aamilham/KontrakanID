@@ -26,17 +26,21 @@
     </div>
   </div>
 
-<h2>anda terdaftar di</h2>
+<div class="mywaitHero">
+
+    <h2>Anda Terdaftar di</h2>
+
+<div class="mywaitBox">
 <ul>
     {% for rent in waiting_list %}
         {% if rent.is_closed %}
             <li class="bg-success">
-                <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
+                <h3><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h3>
                 <p>{{ rent.description }}</p>
             </li>
         {% else %}
             <li>
-                <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
+                <h3><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h3>
                 <p>{{ rent.description }}</p>
             </li>
         {% endif %}
@@ -44,6 +48,9 @@
         <li>belum terdaftar di kosan manapun</li>
     {% endfor %}
 </ul>
+</div>
+</div>
+
 <div class="tambahan"></div>
 </div>
 {% endblock content %}

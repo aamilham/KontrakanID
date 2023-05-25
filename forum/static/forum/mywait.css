@@ -1,11 +1,11 @@
 
-.myrentHero h2 {
+.mywaitHero h2 {
     width: 255px;
     margin: auto;
     margin-bottom: 20px;
 }
 
-.myrentBox {
+.mywaitBox {
     width: 800px;
     margin: auto;
     padding: 3%;
@@ -13,25 +13,14 @@
     background-color: rgb(255, 255, 255);
 }
 
-.myrentBox h3 {
+.mywaitBox h3 {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 24px;
 }
 
-.myrentBox h3 a {
+.mywaitBox h3 a {
     text-decoration: none;
 }
-
-.myrentAction {
-    display: flex;
-}
-
-.myrentAction i {
-    font-size: 20px;
-    margin-right: 20px;
-    color: black;
-}
-
