@@ -2,6 +2,30 @@
 
 
 {% block content %}
+<div class="forumBackground">
+<div class="forumNavbar">
+    <a href="{% url 'forum:forum' %}" class="logo">
+      <div class="backbutton">
+        <div class="backbuttoncontent">
+          <i class="uil uil-arrow-left"></i>
+          Forum
+        </div>
+      </div>
+    </a>
+    <div class="forumProfile">
+      <div class="lonceng">
+        <div class="loncenglogo"><i class="uil uil-bell"></i></div>
+      </div>
+      <a href="{% url 'account:profile'  pk=request.user.id %}">
+        {% if user.profile %}
+        <img src="{{ user.profile.photo.url }}" alt="" class="photoProfile" />
+        {% else %}
+        <h1 class="photoProfilename">{{ request.user.username }}</h1>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+
 <h2>anda terdaftar di</h2>
 <ul>
     {% for rent in waiting_list %}
@@ -20,4 +44,6 @@
         <li>belum terdaftar di kosan manapun</li>
     {% endfor %}
 </ul>
+<div class="tambahan"></div>
+</div>
 {% endblock content %}

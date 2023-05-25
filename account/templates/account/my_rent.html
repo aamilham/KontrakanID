@@ -1,18 +1,53 @@
-{% extends 'forum/base.html' %}
+{% extends 'forum/base.html' %} {% block content %}
+
+<div class="forumBackground">
+  <div class="forumNavbar">
+    <a href="{% url 'forum:forum' %}" class="logo">
+      <div class="backbutton">
+        <div class="backbuttoncontent">
+          <i class="uil uil-arrow-left"></i>
+          Forum
+        </div>
+      </div>
+    </a>
+    <div class="forumProfile">
+      <div class="lonceng">
+        <div class="loncenglogo"><i class="uil uil-bell"></i></div>
+      </div>
+      <a href="{% url 'account:profile'  pk=request.user.id %}">
+        {% if user.profile %}
+        <img src="{{ user.profile.photo.url }}" alt="" class="photoProfile" />
+        {% else %}
+        <h1 class="photoProfilename">{{ request.user.username }}</h1>
+        {% endif %}
+      </a>
+    </div>
+  </div>
 
 
-{% block content %}
-<h2>list kontrakan ku</h2>
-<ul>
-    {% for rent in rents %}
-        <li>
-            <h2><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h2>
-            <p>{{ rent.description }}</p>
-            <p><a href="{% url 'forum:update_rent' pk=rent.pk %}">Edit</a></p>
-            <p><a href="{% url 'forum:delete_rent' pk=rent.pk %}">Delete</a></p>
-        </li>
-    {% empty %}
-        <li>you dont have any rent</li>
-    {% endfor %}
-</ul>
+  <div class="myrentHero">
+
+    <h2>List Kontrakan ku</h2>
+
+    <div class="myrentBox">
+        <ul>
+            {% for rent in rents %}
+            <li>
+              <h3><a href="{% url 'forum:rent' pk=rent.pk %}">{{ rent.title }}</a></h3>
+              <p>{{ rent.description }}</p>
+              <div class="myrentAction">
+                <p><a href="{% url 'forum:update_rent' pk=rent.pk %}"><i class="uil uil-edit"></i></a></p>
+              <p><a href="{% url 'forum:delete_rent' pk=rent.pk %}"><i class="uil uil-trash-alt"></i></a></p>
+              </div>
+            </li>
+            {% empty %}
+            <li>you dont have any rent</li>
+            {% endfor %}
+          </ul>
+    </div>
+
+  </div>
+  
+  <div class="tambahan"></div>
+</div>
 {% endblock content %}

@@ -49,6 +49,11 @@
     margin-bottom: 20px;
 }
 
+.photoProfilerent {
+    width: 50px;
+    height: 50px;
+}
+
 .rentTitleowner h3 {
     font-family: 'Montserrat';
 font-style: normal;
@@ -57,12 +62,12 @@ font-size: 24px;
 line-height: 24px;
 
 color: #292826;
-padding-top: 19px;
-padding-left: 5px;
+padding-top: 13px;
+padding-left: 10px;
 }
 
 .rentTitleowner i {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .rentTitle h2 {
@@ -85,7 +90,6 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 
 padding-top: 1.4%;
-padding-left: 1.4%;
 }
 
 .rentInfo h2 {
@@ -96,6 +100,7 @@ font-size: 18px;
 line-height: 20px;
 
 color: #292826;
+text-align: center;
 }
 
 .rentInfo h3 {
@@ -107,7 +112,7 @@ font-size: 15px;
 line-height: 15px;
 
 color: #292826;
-
+padding-left: 4%;
 }
 
 .rentMid {

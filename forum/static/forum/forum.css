@@ -151,12 +151,17 @@ justify-content: space-between;
     line-height: 24px;
 
     color: #292826;
-    padding-top: 23px;
-    padding-left: 5px;
+    padding-top: 13px;
+    padding-left: 10px;
 }
 
 .forumHeropostingOwner i {
-    font-size: 40px;
+    font-size: 50px;
+}
+
+.photoProfileforum {
+    width: 50px;
+    height: 50px;
 }
 
 .forumHeropostingOwnerkanan {
@@ -168,7 +173,6 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 
 padding-top: 2.5%;
-padding-left: 3%;
 }
 
 .forumHeropostingOwnerkanan h4 {
@@ -178,6 +182,7 @@ font-weight: 800;
 font-size: 16px;
 line-height: 20px;
 color: #292826;
+text-align: center;
 }
 
 .forumHeroposting h2 {
@@ -226,7 +231,7 @@ color: #000000;
     color: #000000;
 }
 
-.forumHeroposting img {
+.forumPhoto {
     width: 200px;
     height: 110px;
 }

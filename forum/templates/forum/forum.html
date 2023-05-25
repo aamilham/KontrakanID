@@ -41,15 +41,19 @@
                             <div class="forumHeroposting">
                                 <div class="forumHeropostingOwner">
                                     <div class="forumHeropostingOwnerkiri">
-                                        <i class="uil uil-user-circle"></i> <h1>{{ rent.owner }}</h1>
+                                        {% if user.profile %}
+                                            <img src="{{ user.profile.photo.url }}" alt="" class="photoProfileforum">
+                                        {% else %}
+                                        <i class="uil uil-user-circle"></i>
+                                        {% endif %}<h1>{{ rent.owner }}</h1>
                                     </div>
                                     <div class="forumHeropostingOwnerkanan">
-                                        <h4>harga: {{ rent.price }}</h4>
+                                        <h4>Rp.{{ rent.price }}/Bulan</h4>
                                     </div>
                                 </div>
                                 <h2><a href="{% url 'forum:rent' pk=rent.pk %}"><i class="uil uil-caret-right"></i> {{ rent.title }}</a></h2>
                                 <p>{{ rent.description }}</p>
-                                <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image">
+                                <img src="{{ rent.photo.url }}" alt="{{ rent.title }} Image" class="forumPhoto">
                                 <h3>Lokasi : {{ rent.address }}</h3>
                                 <div class="forumHeropostingkomentar">
                                     <a href="{% url 'forum:rent' pk=rent.pk %}"><i class="uil uil-angle-double-right"></i><h2>Lihat selengkapnya</h2></a>

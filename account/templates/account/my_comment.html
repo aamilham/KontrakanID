@@ -36,9 +36,11 @@
                 {% for comment in comments %}
                     {% with rent=comment.rent %}
                         <h3><a href="{% url 'forum:rent' pk=rent.pk %}"><i class="uil uil-estate"></i>  {{ rent.title }}</a></h3>
-                        <h4>komentar: {{ comment.content }}</h4>
-                        <p><a href="{% url 'forum:update_comment' pk=comment.pk %}">edit</a></p>
-                        <p><a href="{% url 'forum:delete_comment' pk=comment.pk %}">delete</a></p>
+                        <div class="kotakkomentarku">
+                            <h4>komentar: {{ comment.content }}</h4>
+                        <a href="{% url 'forum:update_comment' pk=comment.pk %}"><i class="uil uil-edit"></i></a>
+                        <a href="{% url 'forum:delete_comment' pk=comment.pk %}"><i class="uil uil-trash-alt"></i></a>
+                        </div>
                     {% endwith %}
                 {% empty %}
                     <li>you dont have any rent</li>

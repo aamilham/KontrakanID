@@ -21,12 +21,27 @@
     line-height: 20px;
     color: #292826;
 
+    width: 700px;
+
     padding: 2%;
-    background-color: #F5F5F5;
     border-radius: 3%;
 }
 
 .mycommentBox a {
     text-decoration: none;
     color: #292826;
+}
+
+.kotakkomentarku {
+    display: flex;
+    background-color: #F5F5F5;
+    margin-bottom: 20px;
+}
+
+.kotakkomentarku a {
+    margin-right: 10px;
+}
+
+.kotakkomentarku a i{
+    font-size: 24px;
 }

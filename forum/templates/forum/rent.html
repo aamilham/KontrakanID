@@ -32,12 +32,17 @@
                 <div class="rentTop">
                     <div class="rentTitle">
                         <div class="rentTitleowner">
-                            <i class="uil uil-user-circle"></i><h3> {{ rent.owner }}</h3>
+                            {% if user.profile %}
+                                <img src="{{ user.profile.photo.url }}" alt="" class="photoProfilerent">
+                            {% else %}
+                                <i class="uil uil-user-circle"></i>
+                            {% endif %}
+                            <h3> {{ rent.owner }}</h3>
                         </div>
                         <h2><i class="uil uil-caret-right"></i>{{ rent.title }}</h2>
                     </div>
                     <div class="rentInfo">
-                        <h2>harga: {{ rent.price }}</h2>
+                        <h2>Rp.{{ rent.price }}/Bulan</h2>
                         <h3>Sisa: {{ remainder }}</h3>
                     </div>
                 </div>
