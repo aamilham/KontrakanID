@@ -34,5 +34,6 @@ next to do : <br />
 forum pages - clear<br />
 rent pages - clear<br />
 create post - clear<br />
-profile
-comment section
+profile - clear<br />
+comment section - clear<br />
+sub menu profile
